@@ -1,0 +1,1 @@
+-[tabs](https://YanG-6668.github.io/react-tabs/)
