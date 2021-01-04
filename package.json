@@ -14,7 +14,7 @@
     "web-vitals": "^0.2.4"
   },
   "homepage": "https://YanG-6668.github.io/react-tabs",
-    "scripts": {
+  "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",

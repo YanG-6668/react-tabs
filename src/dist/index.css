@@ -10,3 +10,16 @@
 body {
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.note strong {
+  margin-right: 1rem;
+}
+
+li {
+  list-style: none;
+}

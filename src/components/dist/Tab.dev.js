@@ -3,13 +3,18 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.Tab = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Buttons = function Buttons() {};
+var Tab = function Tab(_ref) {
+  var title = _ref.title,
+      content = _ref.content;
+  return {
+    title: title
+  };
+};
 
-var _default = Buttons;
-exports["default"] = _default;
+exports.Tab = Tab;

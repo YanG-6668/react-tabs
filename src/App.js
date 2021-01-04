@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
-import Buttons from './components/Buttons';
-import Items from './components/Items';
+import { Tabs } from './components/Tabs';
 import './App.scss';
-import tabsData from './tabsData.json';
 
-function App() {
+export default function App() {
   const [value, setValue] = useState(0);
 
+  const data = [
+    {
+      id: 1,
+      title: 'Item 1',
+      content: 'Content 1'
+    },
+    {
+      id: 2,
+      title: 'Item 2',
+      content: 'Content 2'
+    },
+    {
+      id: 3,
+      title: 'Item 3',
+      content: 'Content 3'
+    },
+  ];
+
+  const onChange = (newValue) => {
+    setValue(newValue);
+  }
+  console.log(value);
   return (
-    <>
-      <div className="tabs">
-       <Buttons tabsData={tabsData} value={value} setValue={setValue} />
-       <Items tabsData={tabsData} value={value} />
-      </div>
-    </>
+    <div className="tabs">
+      <h1>React Tabs</h1>
+
+      <Tabs data={data} value={value} onChange={onChange} />
+    </div>
   );
 }
-
-export default App;
