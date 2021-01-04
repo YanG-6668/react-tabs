@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs } from './components/Tabs';
-import './App.scss';
+import { Tabs } from './Tabs';
 
 export default function App() {
   const [value, setValue] = useState(0);
