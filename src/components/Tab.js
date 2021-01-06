@@ -1,11 +1,14 @@
 import React from 'react';
 
-
-export const Tab = ({ title }) => {
+export const Tab = ({ value, label }) => {
 
   return (
-    <>
-      {title}
-    </>
+    <button
+      type="button"
+      key={value}
+      className='tabs__btns-btn'
+    >
+      {label}
+    </button>
   );
 }
