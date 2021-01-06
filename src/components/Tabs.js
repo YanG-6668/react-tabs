@@ -3,17 +3,21 @@ import { Tab } from './Tab';
 
 export const Tabs = (props) => {
 
-  const { data } = props;
+  const { options, value, handleClick } = props;
 
   return (
     <>
       <div className="tabs__btns">
-        {data.map(item => {
+        {options.map(item => {
           return (
-            <Tab value={item.value} label={item.label} />
+            <Tab 
+              value={item.value} 
+              label={item.label}
+              handleClick={handleClick} 
+            />
           );
         })}
-        {/* <span className="is-active" style={{left: `${value*150}px`}}></span> */}
+        <span className="is-active" style={{ left: `${(value.value - 1) * 150}px` }}></span>
       </div>
     </>
   );

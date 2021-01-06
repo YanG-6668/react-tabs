@@ -5,15 +5,24 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
 
 export default function App() {
-  const [data, refreshData] = useState([
+  const [value, setValue] = useState({ value: 1, label: 'Item 1' });
+
+  const options = [
     { value: 1, label: 'Item 1', icon: <AccessTimeIcon /> },
     { value: 2, label: 'Item 2', icon: <AirplanemodeActiveIcon /> },
     { value: 3, label: 'Item 3', icon: <FavoriteIcon /> }
-  ]);
+  ];
+
+  const handleClick = (e) => {
+    setValue({
+      value: e.target.id,
+      label: e.target.innerHTML
+    })
+  }
 
   return (
     <div className="tabs">
-      <Tabs data={data} />
+      <Tabs options={options} value={value} handleClick={handleClick} />
     </div>
   );
 
