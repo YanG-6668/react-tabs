@@ -85,7 +85,9 @@ li {
       position: absolute;
       height: 3px;
       background-color: red;
-      width: 150px;
+      // max-width: 150px;
+      // max-width: 100%;
+      // width: 100%;
       left: 0;
       bottom: 0;
       transition: left 0.5s ease;

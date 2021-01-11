@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
 import { Tabs } from './Tabs';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+// import AccessTimeIcon from '@material-ui/icons/AccessTime';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+
+const options = [
+  { value: 1, label: 'Item 1' },
+  { value: 2, label: 'Item 2' },
+  { value: 3, label: 'Item 3' },
+];
 
 export default function App() {
-  const [value, setValue] = useState({ value: 1, label: 'Item 1' });
+  const [value, setValue] = useState(
+    { value: 1, label: 'Item 1' }
+  );
 
-  const options = [
-    { value: 1, label: 'Item 1', icon: <AccessTimeIcon /> },
-    { value: 2, label: 'Item 2', icon: <AirplanemodeActiveIcon /> },
-    { value: 3, label: 'Item 3', icon: <FavoriteIcon /> }
-  ];
-
-  const handleClick = (e) => {
-    setValue({
-      value: e.target.id,
-      label: e.target.innerHTML
-    })
+  const handleOnChange = (option) => {
+    setValue({ 
+      value: Number(option.target.value), 
+      label: option.target.innerHTML 
+    });
   }
+
+  console.log(value);
 
   return (
     <div className="tabs">
-      <Tabs options={options} value={value} handleClick={handleClick} />
+      <Tabs
+        options={options}
+        value={value}
+        onChange={handleOnChange}
+      />
     </div>
   );
 
@@ -38,13 +46,6 @@ export default function App() {
   //   const value = e.target.id;
   //   setCheck(value);
   // }
-
-  // const dataBtn = [
-  //   { value: "text", label: "Text", checked: false },
-  //   { value: "leadingIcon", label: "Leading icon", checked: false },
-  //   { value: "topIcon", label: "Top icon", checked: false },
-  //   { value: "onlyIcon", label: "Only icon", checked: false },
-  // ];
 
   // return (
   //   <>

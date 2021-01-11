@@ -2,15 +2,14 @@ import React from 'react';
 
 export const Tab = (props) => {
 
-  const { value, label, handleClick } = props;
+  const { label, value , handleOnClick } = props;
 
   return (
     <button
       type="button"
-      key={value}
-      id={value}
+      value={value}
+      onClick={handleOnClick}
       className='tabs__btns-btn'
-      onClick={handleClick}
     >
       {label}
     </button>
