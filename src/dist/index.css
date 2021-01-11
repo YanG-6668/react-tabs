@@ -24,32 +24,6 @@ li {
   list-style: none;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-}
-.form__label:not(:last-child) {
-  margin-bottom: 15px;
-}
-.form__label-input {
-  margin-right: 5px;
-}
-
-.side-menu {
-  position: absolute;
-  top: 50%;
-  right: 100px;
-  transform: translateY(-50%);
-  padding: 15px;
-  width: 150px;
-  background-color: #fff;
-}
-.side-menu__title {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
 .tabs {
   height: 100vh;
   max-width: 450px;
@@ -75,6 +49,9 @@ li {
   left: 0;
   bottom: 0;
   transition: left 0.5s ease;
+}
+.tabs__btns:not(:last-child) {
+  margin-bottom: 25px;
 }
 .tabs__btns-btn {
   font-family: "Lato", sans-serif;

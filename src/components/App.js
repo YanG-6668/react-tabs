@@ -1,14 +1,35 @@
 import React, { useState } from 'react';
 import { Tabs } from './Tabs';
-// import AccessTimeIcon from '@material-ui/icons/AccessTime';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import AirplanemodeActiveIcon from '@material-ui/icons/AirplanemodeActive';
 
 const options = [
   { value: 1, label: 'Item 1' },
   { value: 2, label: 'Item 2' },
   { value: 3, label: 'Item 3' },
+  { value: 4, label: 'Item 4' },
+  { value: 5, label: 'Item 5' },
 ];
+
+const options1 = [
+  { value: 1, label: 'Item 1', icon: <AccessTimeIcon /> },
+  { value: 2, label: 'Item 2', icon: <FavoriteIcon /> },
+  { value: 3, label: 'Item 3', icon: <AirplanemodeActiveIcon /> },
+];
+
+const options2 = [
+  { value: 1, label: 'Item 1', icon: <AccessTimeIcon />, iconTop: true },
+  { value: 2, label: 'Item 2', icon: <FavoriteIcon />, iconTop: true },
+  { value: 3, label: 'Item 3', icon: <AirplanemodeActiveIcon />, iconTop: true },
+  { value: 4, label: 'Item 4', icon: <FavoriteIcon />, iconTop: true },
+];
+
+const options3 = [
+  { value: 1, icon: <AccessTimeIcon /> },
+  { value: 2, icon: <FavoriteIcon /> },
+  { value: 3, icon: <AirplanemodeActiveIcon /> },
+]
 
 export default function App() {
   const [value, setValue] = useState(
@@ -16,12 +37,8 @@ export default function App() {
   );
 
   const handleOnChange = (option) => {
-    setValue({ 
-      value: Number(option.target.value), 
-      label: option.target.innerHTML 
-    });
+    setValue(option);
   }
-
   console.log(value);
 
   return (
@@ -31,67 +48,21 @@ export default function App() {
         value={value}
         onChange={handleOnChange}
       />
+      <Tabs
+        options={options1}
+        value={value}
+        onChange={handleOnChange}
+      />
+      <Tabs
+        options={options2}
+        value={value}
+        onChange={handleOnChange}
+      />
+      <Tabs
+        options={options3}
+        value={value}
+        onChange={handleOnChange}
+      />
     </div>
   );
-
-  // const [position, setPosition] = useState(0);
-  // const [check, setCheck] = useState('text');
-
-  // const positionBorder = (e) => {
-  //   const value = e.target.dataset.key - 1;
-  //   setPosition(value);
-  // };
-
-  // const handleChange = (e) => {
-  //   const value = e.target.id;
-  //   setCheck(value);
-  // }
-
-  // return (
-  //   <>
-  //     <div className="tabs">
-
-  //       <h1 className="tabs__title">React Tabs</h1>
-
-  //       <div className="tabs__btns">
-
-  //         {data.map(item => {
-  //           return (
-  //             <button
-  //               key={item.value}
-  //               className={`tabs__btns-btn${check === 'topIcon' ? ' icon-column' : ''}`}
-  //               onClick={positionBorder}
-  //               data-key={item.value}
-  //             >{check === 'text' ? '' : item.icon}{check === 'onlyIcon' ? '' : item.label}</button>
-  //           );
-  //         })}
-  //         <div className="is-active" style={{ left: `${(position) * 150}px` }}></div>
-  //       </div>
-
-  //     </div>
-
-  //     <div className="side-menu">
-  //       <h2 className="side-menu__title">Customization</h2>
-
-  //       <form className="form" onChange={handleChange}>
-  //         {dataBtn.map(item => {
-  //           return (
-  //             <label 
-  //               key={item.value} 
-  //               className="form__label"
-  //               htmlFor={item.value}>
-  //               <input
-  //                 className="form__label-input"
-  //                 type="radio"
-  //                 id={item.value}
-  //                 checked={item.checked}
-  //               />
-  //               {item.label}
-  //             </label>
-  //           );
-  //         })}
-  //       </form>
-  //     </div>
-  //   </>
-  // );
 }
